@@ -32,7 +32,14 @@ namespace TodoApi.Controllers
             _context.Todos.Add(todo);
             await _context.SaveChangesAsync();
             return todo;
-
+        }
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<TodoItem>> DeleteTodo(int id)
+        {
+            var todo = await _context.Todos.FindAsync(id);
+            if (todo== null) return NotFound();
+            _context.Todos.Remove(todo);
+            return todo;
         }
 
     }
