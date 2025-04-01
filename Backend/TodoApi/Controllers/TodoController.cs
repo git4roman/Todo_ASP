@@ -49,6 +49,18 @@ namespace TodoApi.Controllers
             if (todo == null) return NotFound();
             return Ok(todo);
         }
+        [HttpPut("{id}")]
+        public async Task<ActionResult<TodoItem>> EditTodos(int id, TodoItem todo)
+        {
+            var existingtodo = await _context.Todos.FindAsync(id);
+            if (existingtodo == null) return NotFound();
+            existingtodo.Title = todo.Title;
+            existingtodo.IsCompleted = todo.IsCompleted;
+            _context.Todos.Update(existingtodo);
+
+            await _context.SaveChangesAsync();
+            return Ok(existingtodo);
+        }
 
     }
 }
