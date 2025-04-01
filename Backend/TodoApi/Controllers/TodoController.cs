@@ -22,7 +22,17 @@ namespace TodoApi.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<TodoItem>>> GetTodos()
         {
-            return await _context.Todos.ToListAsync();
+            var todos = await _context.Todos.ToListAsync();
+            return todos;
+        }
+        [HttpPost]
+        public async Task<ActionResult<TodoItem>> CreateTodo(TodoItem todo)
+        {
+            if (todo.Title == "") return BadRequest();
+            _context.Todos.Add(todo);
+            await _context.SaveChangesAsync();
+            return todo;
+
         }
 
     }
