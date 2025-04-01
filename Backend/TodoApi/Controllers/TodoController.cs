@@ -19,6 +19,11 @@ namespace TodoApi.Controllers
             _context = context;
         }
 
-       
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<TodoItem>>> GetTodos()
+        {
+            return await _context.Todos.ToListAsync();
+        }
+
     }
 }
