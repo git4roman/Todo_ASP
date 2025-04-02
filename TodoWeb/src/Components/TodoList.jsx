@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { getTodos, postTodo, getTodo, editTodo, deleteTodo } from "../api";
+import "./TodoList.css";
 
 const TodoList = () => {
   const [newTodo, setNewTodo] = useState("");
@@ -62,7 +63,10 @@ const TodoList = () => {
         <ul>
           {todos.map((todo) =>
             editingTodo != todo.id ? (
-              <li key={todo.id} style={{ "list-style": "none" }}>
+              <li
+                key={todo.id}
+                style={{ listStyle: "none", textAlign: "start" }}
+              >
                 <input
                   type="checkbox"
                   checked={todo.isCompleted}

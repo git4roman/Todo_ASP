@@ -1,0 +1,184 @@
+/* Container for the whole Todo app */
+.todoContainer {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 30px;
+  border-radius: 15px;
+  background: linear-gradient(
+    135deg,
+    #ff9a8b,
+    #ff6a88,
+    #ff3f7d
+  ); /* Soft romantic gradient */
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+  color: white;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+}
+
+/* Section for adding new todo */
+.inputSection {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 25px;
+  justify-content: center;
+}
+
+.inputSection input {
+  flex-grow: 1;
+  padding: 12px 20px;
+  font-size: 18px;
+  border-radius: 30px;
+  border: 2px solid #fff;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.3);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.inputSection input:focus {
+  border-color: #ff6a88;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.inputSection button {
+  padding: 12px 20px;
+  font-size: 18px;
+  background-color: #ff3f7d;
+  color: white;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.inputSection button:hover {
+  background-color: #ff6a88;
+  transform: scale(1.05);
+}
+
+/* List of todos */
+.todoList ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.todoList li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  margin: 15px 0;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.todoList li:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-5px);
+}
+
+.todoList li input[type="checkbox"] {
+  margin-right: 15px;
+  transform: scale(1.3);
+  transition: transform 0.3s ease;
+}
+
+.todoList li input[type="checkbox"]:checked {
+  background-color: #ff3f7d;
+  border: none;
+}
+
+.todoList li button {
+  background-color: #ff6347;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.todoList li button:hover {
+  background-color: #ff4c3b;
+  transform: scale(1.1);
+}
+
+/* Edit button */
+.todoList li button.edit {
+  background-color: #f7b7b5;
+}
+
+.todoList li button.edit:hover {
+  background-color: #f1a0a1;
+}
+
+/* Editing style */
+.todoList li input[type="text"] {
+  padding: 10px 15px;
+  font-size: 18px;
+  border-radius: 12px;
+  border: 2px solid #fff;
+  width: 80%;
+  background-color: rgba(255, 255, 255, 0.3);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.todoList li input[type="text"]:focus {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: #ff3f7d;
+}
+
+/* Save and cancel buttons */
+.todoList li button.save {
+  background-color: #4caf50;
+  color: white;
+  border-radius: 50px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.todoList li button.save:hover {
+  background-color: #45a049;
+  transform: scale(1.1);
+}
+
+.todoList li button.Cancel {
+  background-color: #f44336;
+  color: white;
+  border-radius: 50px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.todoList li button.Cancel:hover {
+  background-color: #d32f2f;
+  transform: scale(1.1);
+}
+
+/* Strikethrough for completed todos */
+.todoList li.completed {
+  text-decoration: line-through;
+  color: #aaa;
+}
+
+/* Additional animations and smooth transitions */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f3f4f7;
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt.png"); /* Subtle texture for background */
+  background-size: cover;
+}
